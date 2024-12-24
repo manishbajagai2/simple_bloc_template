@@ -8,7 +8,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final counterAction = context.read<CounterBloc>();
+    CounterBloc counterAction = CounterBloc();
     return Scaffold(
       backgroundColor: Colors.black,
       extendBodyBehindAppBar: true,
@@ -18,6 +18,7 @@ class HomeScreen extends StatelessWidget {
             SystemUiOverlayStyle(statusBarBrightness: Brightness.dark),
       ),
       body: BlocBuilder<CounterBloc, CounterState>(
+        bloc: counterAction,
         builder: (context, state) {
           final counterState = state as CounterInitial;
           return Padding(

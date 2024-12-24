@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:learning_bloc/bloc/counter_bloc.dart';
 import 'package:learning_bloc/screens/home_screen.dart';
 
 void main() {
@@ -14,10 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: BlocProvider(
-        create: (context) => CounterBloc(),
-        child: HomeScreen(),
-      ),
+      home: HomeScreen(),
     );
   }
 }
